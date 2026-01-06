@@ -6,7 +6,7 @@ O projeto consome a **API pública do GitHub**, exibindo meus repositórios de f
 
 🔗 **Acesse o projeto:**  
 
-👉 https://riccideveloper.github.io (ou seu domínio, se houver)
+https://riccideveloper.vercel.app/
 
 ---
 
