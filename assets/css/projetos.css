@@ -1,5 +1,5 @@
-@import url('../CSS/Components/__header.css');
-@import url('../CSS/Components/__darkMode.css');
+@import url('/assets/css/components/__header.css');
+@import url('/assets/css/components/__darkMode.css');
 
 :root {
   --bg-page: #03081B;

@@ -1,5 +1,5 @@
-@import url('Components/__header.css');
-@import url('Components/__darkMode.css');
+@import url('/assets/components/__header.css');
+@import url('/assets/components/__darkMode.css');
 
 main {
     background-color: #03081B;
