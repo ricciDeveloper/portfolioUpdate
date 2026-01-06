@@ -1,0 +1,59 @@
+body.light {
+    background-color: #f8fafc;
+}
+
+body.light header {
+    background-color: #f8fafc;
+}
+
+body.light main {
+    background-color: #f8fafc;
+}
+
+body.light .menu {
+    background-color: #f8fafc;
+}
+
+body.light .menu li a {
+    color: #03081B;
+    border-color: #03081B40;
+}
+
+body.light .menu li a:hover {
+    background-color: #03081B;
+    color: #ffffff;
+    border-color: #03081B;
+}
+
+body.light .hamburger {
+    color: #03081B;
+}
+
+body.light .intro {
+    color: #334155;
+}
+
+body.light .intro h1 {
+    color: #020617;
+}
+
+body.light .intro h2 {
+    color: #475569;
+}
+
+body.light .intro p {
+    color: #475569;
+}
+
+body.light .intro p:first-of-type {
+    color: #0f766e;
+}
+
+body.light .intro button:last-of-type {
+    color: #020617;
+    border-color: #94a3b8;
+}
+
+body.light .intro button:last-of-type:hover {
+    background-color: #e2e8f0;
+}

@@ -1,0 +1,150 @@
+@import url('../CSS/Components/__header.css');
+@import url('../CSS/Components/__darkMode.css');
+
+:root {
+  --bg-page: #03081B;
+  --bg-card: #0B102E;
+  --bg-card-hover: #12174a;
+  --text-primary: #E4E6EB;
+  --text-secondary: #A1A5B7;
+  --accent: #4F8BFF;
+  --border-radius: 16px;
+  --transition: 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+#lista-repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lista-repos li {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  position: relative;
+  transition: transform var(--transition),
+              box-shadow var(--transition),
+              background-color var(--transition);
+}
+
+#lista-repos li:hover {
+  transform: translateY(-6px);
+  background-color: var(--bg-card-hover);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
+}
+
+#lista-repos a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: color var(--transition);
+
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+#lista-repos li:hover a {
+  color: var(--accent);
+}
+
+#lista-repos h6 {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+#lista-repos li::after {
+  content: "↗";
+  position: absolute;
+  bottom: 1rem;
+  right: 1.25rem;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  opacity: 0;
+  transition: opacity var(--transition),
+              transform var(--transition);
+}
+
+#lista-repos li:hover::after {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.countStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.stack-item {
+  background-color: var(--bg-card);
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color var(--transition),
+              transform var(--transition);
+}
+
+.stack-item:hover {
+  background-color: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.stack-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.stack-count {
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+
+@media (max-width: 480px) {
+  main {
+    padding: 3rem 1rem;
+  }
+
+  #lista-repos li {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,96 @@
+@import url('Components/__header.css');
+@import url('Components/__darkMode.css');
+
+main {
+    background-color: #03081B;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.intro {
+    max-width: 720px;
+    padding: 4rem 2rem;
+    color: #cbd5e1;
+}
+
+.intro p:first-of-type {
+    color: #2dd4bf;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+
+.intro h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.intro h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+}
+
+.intro p:last-of-type {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #94a3b8;
+    max-width: 540px;
+    margin-bottom: 2rem;
+}
+
+.intro .btn {
+    display: inline-block;
+    font-size: 0.95rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-top: 10px;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.intro .btn.primary {
+    background-color: #2dd4bf;
+    color: #03081B;
+    font-weight: 600;
+}
+
+.intro .btn.primary:hover {
+    background-color: #5eead4;
+    transform: translateY(-2px);
+}
+
+.intro .btn.secondary {
+    background-color: transparent;
+    border: 1px solid #334155;
+    color: #e2e8f0;
+}
+
+.intro .btn.secondary:hover {
+    background-color: #020617;
+    border-color: #64748b;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 3rem 1.5rem;
+    }
+
+    .intro h1 {
+        font-size: 2.6rem;
+    }
+
+    .intro h2 {
+        font-size: 1.9rem;
+    }
+}
