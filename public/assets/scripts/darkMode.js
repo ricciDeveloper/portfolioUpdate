@@ -5,9 +5,9 @@ lightMode.addEventListener('click', () => {
 
     if (document.body.classList.contains('light')) {
         lightMode.textContent = '☀️';
-        logo.src = '../assets/Images/logo.png'
+        logo.src = '../assets/images/logo.png'
     } else {
         lightMode.textContent = '🌑';
-        logo.src = '../assets/Images/logo_png.png'
+        logo.src = '../assets/images/logo_png.png'
     }
 });
