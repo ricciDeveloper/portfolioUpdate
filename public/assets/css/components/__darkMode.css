@@ -49,11 +49,22 @@ body.light .intro p:first-of-type {
     color: #0f766e;
 }
 
-body.light .intro button:last-of-type {
+body.light .intro .button:last-of-type {
     color: #020617;
     border-color: #94a3b8;
 }
 
 body.light .intro button:last-of-type:hover {
     background-color: #e2e8f0;
+}
+
+body.light .intro .btn.secondary {
+    color: #020617;
+    border: 1px solid #94a3b8;
+    background-color: transparent;
+}
+
+body.light .intro .btn.secondary:hover {
+    background-color: #e2e8f0;
+    color: #020617;
 }
