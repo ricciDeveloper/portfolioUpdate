@@ -1,3 +1,5 @@
+let repositoriosGlobais = [];
+
 const lista = document.getElementById('lista-repos');
 const stackContainer = document.querySelector('.countStack');
 
@@ -53,9 +55,12 @@ async function carregarRepositorios() {
 }
 
 function processarRepositorios(repos) {
+  repositoriosGlobais = repos;
   renderizarRepositorios(repos);
   contarStacks(repos);
+  ativarFiltro();
 }
+
 
 function renderizarRepositorios(repos) {
   lista.innerHTML = repos
@@ -77,15 +82,51 @@ function contarStacks(repos) {
     return acc;
   }, {});
 
-  stackContainer.innerHTML = Object.entries(stacks)
-    .sort((a, b) => b[1] - a[1])
-    .map(([stack, count]) => `
-      <div class="stack-item" data-stack="${stack}">
-        <span class="stack-name">${stack}</span>
-        <span class="stack-count">${count}</span>
-      </div>
-    `)
-    .join('');
+  const total = repos.length;
+
+  stackContainer.innerHTML = `
+    <div class="stack-item active" data-stack="Todos">
+      <span class="stack-name">Todos</span>
+      <span class="stack-count">${total}</span>
+    </div>
+    ${Object.entries(stacks)
+      .sort((a, b) => b[1] - a[1])
+      .map(([stack, count]) => `
+        <div class="stack-item" data-stack="${stack}">
+          <span class="stack-name">${stack}</span>
+          <span class="stack-count">${count}</span>
+        </div>
+      `)
+      .join('')}
+  `;
 }
+
+function ativarFiltro() {
+  const stackItems = document.querySelectorAll('.stack-item');
+
+  stackItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const stack = item.dataset.stack;
+
+      document
+        .querySelectorAll('.stack-item')
+        .forEach(el => el.classList.remove('active'));
+
+      item.classList.add('active');
+
+      if (stack === 'Todos') {
+        renderizarRepositorios(repositoriosGlobais);
+        return;
+      }
+
+      const filtrados = repositoriosGlobais.filter(
+        repo => (repo.language ?? 'Outros') === stack
+      );
+
+      renderizarRepositorios(filtrados);
+    });
+  });
+}
+
 
 carregarRepositorios();
