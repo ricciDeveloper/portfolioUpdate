@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Ricci - Fullstack Developer</title>
+    <title>Contatos - João Ricci</title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/contatos.css">
+
+    <meta name="description" content="Entre em contato com João Ricci, desenvolvedor Fullstack especializado em Java, javascript, typescript, html e css.">
     <meta name="robots" content="index, follow">
-    <meta name="canonical" content="https://riccideveloper.vercel.app/pages/projetos.html" />
-    <meta name="description" content="Veja os projetos desenvolvidos por João Ricci, desenvolvedor Fullstack especializado em Java, javascript, typescript, html e css.">
-   <!-- Favicons -->
+    <meta name="canonical" content="https://riccideveloper.vercel.app/pages/contatos.html" >
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="manifest" href="/assets/images/site.webmanifest">
-
-
-    <!-- Imports CSS -->
-     <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/projetos.css">
-
 </head>
 <body>
     <header class="header">
@@ -32,26 +29,26 @@
             </button>
 
             <ul class="menu navigation">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="/pages/contatos.html">Contato</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/pages/projetos/">Projetos</a></li>
+                <li><a href="/pages/contatos/">Contato</a></li>
                 <li><button class="mode">🌑</button></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <div class="countStack">
-
+        <div class="forms">
+            <input type="email" name="email" id="email" placeholder="Seu email">
+            <input type="name" name="name" id="name" placeholder="Seu nome">
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
         </div>
-        <ul id="lista-repos"></ul>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/joaoriccideveloper/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/riccideveloper" target="_blank">GitHub</a>
+        </div>
     </main>
-    <footer>
-
-    </footer>
-
     <script src="/assets/scripts/main.js" defer></script>
-    <script src="/assets/scripts/apiGithub.js" defer></script>
     <script src="/assets/scripts/darkMode.js" defer></script>
 </body>
 </html>
