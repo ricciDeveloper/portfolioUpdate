@@ -5,11 +5,11 @@ function applyTheme(theme){
     if(theme === 'light'){
         document.body.classList.add('light');
         lightMode.textContent = '☀️';
-        logo.src = '../assets/images/logo.png'
+        logo.src = '/assets/images/logo.png'
     }else{
         document.body.classList.remove('light');
         lightMode.textContent = '🌑';
-        logo.src = '../assets/images/logo_png.png';
+        logo.src = '/assets/images/logo_png.png';
     }
 }
 
