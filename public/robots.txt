@@ -1,2 +1,4 @@
 user-agent: *
 Allow: *
+
+sitemap: https://riccideveloper.vercel.app/sitemap.xml
