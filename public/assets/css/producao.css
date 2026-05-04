@@ -1,0 +1,469 @@
+@import url('../css/components/__header.css');
+@import url('../css/components/__darkMode.css');
+
+/* =========================
+   BASE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        radial-gradient(circle at top, #07102b 0%, #03081B 45%);
+
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    min-height: 100vh;
+
+    padding:
+        7rem
+        1rem
+        3rem;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.container ul {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 1.5rem;
+
+    padding: 0;
+    margin: 0;
+}
+
+/* =========================
+   ITEM
+========================= */
+
+.container ul li {
+    list-style: none;
+
+    width: 100%;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.container ul li a {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    width: 100%;
+
+    padding: 0.9rem;
+
+    text-decoration: none;
+    color: aliceblue;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.02)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 1.3rem;
+
+    backdrop-filter: blur(12px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.container ul li a:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   PREVIEW
+========================= */
+
+.projectPreview {
+    width: 100%;
+    height: 190px;
+
+    overflow: hidden;
+
+    border-radius: 1rem;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    background-color: #020617;
+
+    position: relative;
+}
+
+/* Glow */
+
+@import url('../css/components/__header.css');
+@import url('../css/components/__darkMode.css');
+
+/* =========================
+   BASE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        radial-gradient(circle at top, #07102b 0%, #03081B 45%);
+
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    min-height: 100vh;
+
+    padding:
+        7rem
+        1rem
+        3rem;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.container ul {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 1.5rem;
+
+    padding: 0;
+    margin: 0;
+}
+
+/* =========================
+   ITEM
+========================= */
+
+.container ul li {
+    list-style: none;
+
+    width: 100%;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.container ul li a {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    width: 100%;
+
+    padding: 0.9rem;
+
+    text-decoration: none;
+    color: aliceblue;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.02)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 1.3rem;
+
+    backdrop-filter: blur(12px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.container ul li a:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35);
+}
+
+/* =========================
+   PREVIEW
+========================= */
+
+.projectPreview {
+    width: 100%;
+    height: 190px;
+
+    overflow: hidden;
+
+    border-radius: 1rem;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    background-color: #020617;
+
+    position: relative;
+}
+
+/* Glow */
+
+.projectPreview::before {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.04),
+            transparent
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+/* =========================
+   IFRAME
+========================= */
+
+.projectPreview iframe {
+    width: 1280px;
+    height: 720px;
+
+    border: none;
+
+    transform: scale(0.26);
+    transform-origin: top left;
+
+    pointer-events: none;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.container ul li a span {
+    font-size: 1rem;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.container ul li a span::after {
+    content: '↗';
+
+    font-size: 1rem;
+
+    opacity: 0.7;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.container ul li a:hover span::after {
+    transform:
+        translateX(4px)
+        translateY(-3px);
+
+    opacity: 1;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (min-width: 768px) {
+
+    main {
+        padding:
+            8rem
+            2rem
+            4rem;
+    }
+
+    .projectPreview {
+        height: 210px;
+    }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media screen and (min-width: 1200px) {
+
+    .projectPreview {
+        height: 220px;
+    }
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.container ul li a span {
+    font-size: 1rem;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.container ul li a span::after {
+    content: '↗';
+
+    font-size: 1rem;
+
+    opacity: 0.7;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.container ul li a:hover span::after {
+    transform:
+        translateX(4px)
+        translateY(-3px);
+
+    opacity: 1;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (min-width: 768px) {
+
+    main {
+        padding:
+            8rem
+            2rem
+            4rem;
+    }
+
+    .projectPreview {
+        height: 210px;
+    }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media screen and (min-width: 1200px) {
+
+    .projectPreview {
+        height: 220px;
+    }
+}
