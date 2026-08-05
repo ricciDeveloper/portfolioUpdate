@@ -2,6 +2,7 @@ import "server-only";
 
 import Database from "better-sqlite3";
 import { mkdirSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 export type ContactInput = {
@@ -15,9 +16,17 @@ let database: Database.Database | undefined;
 function getDatabase() {
   if (database) return database;
 
-  const directory = join(process.cwd(), "data");
-  mkdirSync(directory, { recursive: true });
-  database = new Database(join(directory, "portfolio.db"));
+  const directory = process.env.VERCEL ? tmpdir() : join(process.cwd(), "data");
+
+  try {
+    mkdirSync(directory, { recursive: true });
+    database = new Database(join(directory, "portfolio.db"));
+  } catch {
+    const fallbackDir = tmpdir();
+    mkdirSync(fallbackDir, { recursive: true });
+    database = new Database(join(fallbackDir, "portfolio.db"));
+  }
+
   database.pragma("journal_mode = WAL");
   database.exec(`
     CREATE TABLE IF NOT EXISTS contacts (
@@ -37,3 +46,4 @@ export function saveContact(contact: ContactInput) {
   );
   return statement.run(contact.name, contact.email, contact.message);
 }
+
