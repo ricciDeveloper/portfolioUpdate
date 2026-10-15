@@ -5,3 +5,4 @@ tsconfig.tsbuildinfo
 *.db-journal
 .env*
 !\.env.example
+.npm-cache/

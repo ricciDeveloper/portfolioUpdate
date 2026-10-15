@@ -51,3 +51,5 @@ for each row execute function public.set_updated_at();
 
 drop trigger if exists page_seo_set_updated_at on public.page_seo;
 create trigger page_seo_set_updated_at before update on public.page_seo for each row execute function public.set_updated_at();
+
+notify pgrst, 'reload schema';
