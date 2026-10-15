@@ -1,4 +1,4 @@
-﻿import "server-only";
+import "server-only";
 const baseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const publicKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 type Row = Record<string, unknown>;
@@ -14,7 +14,10 @@ async function request<T>(table: string, query = "", options: RequestOptions = {
   const response = await fetch(`${baseUrl}/rest/v1/${table}${query}`, { method: options.method ?? "GET", headers: { apikey: key, ...(key.startsWith("eyJ") ? { Authorization: `Bearer ${key}` } : {}), "Content-Type": "application/json", ...(options.prefer ? { Prefer: options.prefer } : {}) }, ...(options.body ? { body: JSON.stringify(options.body) } : {}), ...cacheOptions });
   if (!response.ok) throw new Error(`Supabase retornou ${response.status}: ${await response.text()}`);
   if (response.status === 204) return undefined as T;
-  return response.json() as Promise<T>;
+  const responseBody = await response.text();
+  if (!responseBody.trim()) return undefined as T;
+  try { return JSON.parse(responseBody) as T; }
+  catch { throw new Error("Supabase retornou uma resposta inválida."); }
 }
 export async function saveContact(contact: { name: string; email: string; message: string }) { return request("contacts", "", { method: "POST", body: contact, prefer: "return=minimal" }); }
 export async function getPosts(publishedOnly = true) { return request<BlogPost[]>("blog_posts", `?select=*&${publishedOnly ? "status=eq.published&" : ""}order=created_at.desc`, { admin: !publishedOnly }); }
