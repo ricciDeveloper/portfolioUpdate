@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { getPageSeo } from "@/lib/database";
 const origin = "https://riccideveloper.vercel.app";
 export async function createPageMetadata(path: string, defaultTitle: string, defaultDescription: string, kind: "website" | "article" = "website"): Promise<Metadata> {
@@ -26,5 +26,15 @@ export const websiteJsonLd = {
   publisher: { "@id": `${origin}/#joao-ricci` },
 };
 export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {
-  return { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, item: `${origin}${item.path}` })) };
+  if (items.length < 2) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      ...(index < items.length - 1 ? { item: `${origin}${item.path}` } : {}),
+    })),
+  };
 }
