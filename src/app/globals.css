@@ -44,3 +44,19 @@ h1, h2, p { margin-top: 0; } h1 { max-width: 800px; margin-bottom: 1rem; font-si
 .blog-content table { display:block; max-width:100%; overflow-x:auto; border-collapse:collapse; border-spacing:0; margin:1.75rem 0; font-size:.95rem; }.blog-content th,.blog-content td { padding:.65rem .8rem; border:1px solid var(--line); text-align:left; }.blog-content th { color:var(--text); background:var(--panel); }
 .blog-content details { padding:.85rem 1rem; border:1px solid var(--line); border-radius:.5rem; }.blog-content summary { color:var(--text); cursor:pointer; font-weight:700; }.blog-content dl { margin:0 0 1.5rem; }.blog-content dt { color:var(--text); font-weight:700; }.blog-content dd { margin:0 0 .8rem 1.25rem; }
 .blog-content .text-left { text-align:left; }.blog-content .text-center { text-align:center; }.blog-content .text-right { text-align:right; }.blog-content .text-justify { text-align:justify; }
+
+/* Semantic article structure used by imported HTML (TOC, callouts, sections). */
+.article .blog-content { white-space:normal; }
+.blog-content section { margin:3.5rem 0; scroll-margin-top:7rem; }
+.blog-content section > h2:first-child { margin-top:0; }
+.blog-content aside { margin:1.5rem 0 2.25rem; padding:1.25rem 1.5rem; border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line)); border-left:4px solid var(--accent); border-radius:.75rem; background:color-mix(in srgb,var(--accent) 7%,var(--panel)); color:var(--text); }
+.blog-content aside > strong { display:block; margin-bottom:.65rem; color:var(--text); font-size:1.05rem; }
+.blog-content aside ul { margin:.5rem 0 0; }
+.blog-content nav { margin:2rem 0 3rem; padding:1.25rem 1.5rem; border:1px solid var(--line); border-radius:.75rem; background:var(--panel); }
+.blog-content nav h2 { margin:0 0 .75rem; color:var(--text); font-size:1.2rem; }
+.blog-content nav ol { margin:0; padding-left:1.5rem; }
+.blog-content nav li { padding:.2rem 0; }
+.blog-content nav a { color:var(--accent); }
+.blog-content [id] { scroll-margin-top:7rem; }
+.blog-content header,.blog-content footer { color:var(--muted); }
+.blog-content time { font-size:.9rem; }
