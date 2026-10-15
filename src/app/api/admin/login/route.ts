@@ -1,0 +1,2 @@
+﻿import { createAdminSession, validAdminPassword } from "@/lib/admin-auth";
+export async function POST(request: Request) { const data = await request.json().catch(() => null); if (!validAdminPassword(typeof data?.password === "string" ? data.password : "")) return Response.json({ message: "Senha inválida." }, { status: 401 }); await createAdminSession(); return Response.json({ message: "Acesso autorizado." }); }
